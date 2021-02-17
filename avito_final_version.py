@@ -12,7 +12,7 @@ class ItemsPage:
         button.click()
         time.sleep(3)
     
-    def input_login_and_password ():
+    def input_login_and_password (browser):
         input1=browser.find_element_by_name ("login")
         input1.send_keys("")
         input2=browser.find_element_by_name ("password")
@@ -21,22 +21,22 @@ class ItemsPage:
         button.click()
         time.sleep(5)
     
-    def choosing_random_item ():
+    def choosing_random_item (browser):
         button=browser.find_element_by_css_selector (".iva-item-titleStep-2bjuh a:link")
         button.click()
     
-    def wait_and_switch_to_new_window ():
+    def wait_and_switch_to_new_window (browser):
         time.sleep(5)
         name = browser.window_handles[1]
         browser.switch_to.window(name)
 
 class Purchase:
     
-    def purchase_with_delivery ():
+    def purchase_with_delivery (browser):
         button=browser.find_element_by_css_selector (".item-view-actions button:first-child")
         button.click()
     
-    def check_phone_input_is_empty ():
+    def check_phone_input_is_empty (browser):
         input3=browser.find_element_by_css_selector ("[data-marker='sd/order-widget-field/phone']")
         assert input3.get_attribute('value')==''
 
