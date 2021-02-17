@@ -5,13 +5,12 @@ browser.implicitly_wait(10)
 
 class ItemsPage:
     
-    def __init__(self, browser):
-        self.browser=browser
     
     def open_and_sign_in (browser):
         browser.get("https://www.avito.ru/sochi/lichnye_veschi?cd=1&d=1")
         button=browser.find_element_by_partial_link_text ("Вход и регистрация")
         button.click()
+        time.sleep(3)
     
     def input_login_and_password ():
         input1=browser.find_element_by_name ("login")
@@ -43,11 +42,11 @@ class Purchase:
 
 try:
     ItemsPage.open_and_sign_in(browser)
-    ItemsPage.input_login_and_password()
-    ItemsPage.choosing_random_item()
-    ItemsPage.wait_and_switch_to_new_window()
-    Purchase.purchase_with_delivery()
-    Purchase.check_phone_input_is_empty()
+    ItemsPage.input_login_and_password(browser)
+    ItemsPage.choosing_random_item(browser)
+    ItemsPage.wait_and_switch_to_new_window(browser)
+    Purchase.purchase_with_delivery(browser)
+    Purchase.check_phone_input_is_empty(browser)
 
 
 finally:
